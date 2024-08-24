@@ -50,12 +50,12 @@ function BookingPage() {
 
   return (
     <Container maxWidth="sm">
-      <Box sx={{ mt: 1, mb: 1 }}>
+      <Box sx={{ mt: 5, mb: 1 }}>
         <Typography variant="h4" gutterBottom>
           Book a Service
         </Typography>
         <form onSubmit={handleSubmit}>
-          <Grid container spacing={1}>
+          <Grid container spacing={3}>
             <Grid item xs={12}>
               <TextField
                 fullWidth

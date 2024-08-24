@@ -35,7 +35,7 @@ function MenuPage() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+    <Container maxWidth="lg" sx={{ mt: 6, mb: 4 }}>
       <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
         Our Menu
       </Typography>

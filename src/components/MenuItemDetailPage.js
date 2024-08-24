@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
+import { Container, Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 
 function MenuItemDetailPage() {
