@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - poc  # or the name of your main branch
+  workflow_dispatch:
 
 jobs:
   deploy:
