@@ -18,6 +18,7 @@ const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: '"Roboto", sans-serif', // Specify your font here
     h1: {
       fontWeight: 700,
       color: '#003366', // Deep Blue
@@ -38,6 +39,12 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
+          border: '2px solid #000000', // Black border
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
+          '&:hover': {
+            border: '2px solid #000000', // Black border on hover
+            boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+          },
         },
         containedPrimary: {
           backgroundColor: '#003366', // Deep Blue
@@ -55,11 +62,14 @@ const theme = createTheme({
         },
       },
     },
-    MuiAppBar: {
+    MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#003366', // Deep Blue
-          color: '#FFFFFF', // White
+          border: '2px solid #000000', // Black border
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
+          '&:hover': {
+            boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+          },
         },
       },
     },
@@ -67,6 +77,20 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: '#FFFFFF', // White
+          border: '2px solid #000000', // Black border
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
+          '&:hover': {
+            boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+          },
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         },
       },
     },

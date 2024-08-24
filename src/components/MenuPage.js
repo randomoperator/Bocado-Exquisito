@@ -36,18 +36,18 @@ function MenuPage() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom  style={{ textAlign: 'center' }}>
         Our Menu
       </Typography>
-      <Typography variant="body1" paragraph>
+      <Typography variant="body1" paragraph  style={{ textAlign: 'center' }}>
         Explore our diverse menu offerings, crafted with fresh ingredients and culinary expertise.
       </Typography>
       {menuCategories.map((category, index) => (
         <Box key={index} sx={{ mb: 6 }}>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant="h5" gutterBottom  style={{ textAlign: 'center' }}>
             {category.category}
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={10} justifyContent="center">
             {category.items.map((item, idx) => (
               <Grid item xs={12} sm={6} md={4} key={idx}>
                 <Card>
