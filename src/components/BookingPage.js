@@ -20,8 +20,32 @@ function BookingPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Booking data:', formData);
+    // Replace YOUR_FORM_ID with your actual Formspree form ID
+    fetch('https://formspree.io/f/xqazwbnj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Booking submitted successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          date: '',
+          guests: '',
+          eventType: ''
+        });
+      } else {
+        alert('There was an error submitting your booking.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error submitting your booking.');
+    });
   };
 
   return (
