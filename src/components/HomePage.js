@@ -1,15 +1,16 @@
 import React from 'react';
 import { Container, Typography, Grid, Box, Button, Card, CardContent, CardMedia } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       {/* Hero Section */}
       <Box sx={{ textAlign: 'center', mb: 6 }}>
-        <Typography variant="h2" component="h1" gutterBottom style={{ textAlign: 'center' }}>
+        <Typography variant="h2" component="h1" gutterBottom>
           Welcome to Bocado Exquisito
         </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph style={{ textAlign: 'center' }}>
+        <Typography variant="h5" color="text.secondary" paragraph>
           We bring exceptional catering services for every occasion, creating unforgettable culinary experiences.
         </Typography>
         <img
@@ -18,9 +19,11 @@ function HomePage() {
           style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
         />
         <Box sx={{ mt: 4 }}>
-          <Button variant="contained" color="primary" size="large" href="/services">
-            Explore Our Services
-          </Button>
+          <Link to="/services" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" color="primary" size="large">
+              Explore Our Services
+            </Button>
+          </Link>
         </Box>
       </Box>
 
@@ -125,9 +128,11 @@ function HomePage() {
         <Typography variant="h5" gutterBottom>
           Ready to Plan Your Next Event?
         </Typography>
-        <Button variant="contained" color="secondary" size="large" href="/booking">
-          Book a Service
-        </Button>
+        <Link to="/booking" style={{ textDecoration: 'none' }}>
+          <Button variant="contained" color="secondary" size="large">
+            Book a Service
+          </Button>
+        </Link>
       </Box>
     </Container>
   );
