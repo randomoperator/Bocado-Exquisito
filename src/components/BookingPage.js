@@ -1,6 +1,6 @@
 // src/components/BookingPage.js
 import React, { useState } from 'react';
-import { TextField, Button, Grid, Container, Typography, Box } from '@mui/material';
+import { TextField, Button, Grid, Container, Typography, Box, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 
 function BookingPage() {
   const [formData, setFormData] = useState({
@@ -90,25 +90,39 @@ function BookingPage() {
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Number of Guests"
-                type="number"
-                name="guests"
-                value={formData.guests}
-                onChange={handleChange}
-                required
-              />
+              <FormControl fullWidth required>
+                <InputLabel id="guests-label">Number of Guests</InputLabel>
+                <Select
+                  labelId="guests-label"
+                  name="guests"
+                  value={formData.guests}
+                  onChange={handleChange}
+                  label="Number of Guests"
+                >
+                  {[...Array(100).keys()].map(num => (
+                    <MenuItem key={num + 1} value={num + 1}>
+                      {num + 1}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Event Type"
-                name="eventType"
-                value={formData.eventType}
-                onChange={handleChange}
-                required
-              />
+              <FormControl fullWidth required>
+                <InputLabel id="event-type-label">Event Type</InputLabel>
+                <Select
+                  labelId="event-type-label"
+                  name="eventType"
+                  value={formData.eventType}
+                  onChange={handleChange}
+                  label="Event Type"
+                >
+                  <MenuItem value="Wedding">Wedding</MenuItem>
+                  <MenuItem value="Corporate Event">Corporate Event</MenuItem>
+                  <MenuItem value="Private Party">Private Party</MenuItem>
+                  <MenuItem value="Other">Other</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <Button type="submit" variant="contained" color="primary" fullWidth>

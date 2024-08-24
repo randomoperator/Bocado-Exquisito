@@ -13,7 +13,7 @@ function HomePage() {
           We bring exceptional catering services for every occasion, creating unforgettable culinary experiences.
         </Typography>
         <img
-          src="https://source.unsplash.com/1600x900/?catering,event"
+          src="https://picsum.photos/450"
           alt="Catering Service"
           style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
         />
@@ -35,7 +35,7 @@ function HomePage() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://source.unsplash.com/1600x900/?quality,food"
+                image="https://picsum.photos/450"
                 alt="Quality Ingredients"
               />
               <CardContent>
@@ -53,7 +53,7 @@ function HomePage() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://source.unsplash.com/1600x900/?event,planning"
+                image="https://picsum.photos/450"
                 alt="Customized Menus"
               />
               <CardContent>
@@ -71,7 +71,7 @@ function HomePage() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://source.unsplash.com/1600x900/?teamwork,professional"
+                image="https://picsum.photos/450"
                 alt="Professional Service"
               />
               <CardContent>

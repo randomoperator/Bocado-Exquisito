@@ -15,7 +15,7 @@ function Header() {
           {/* Logo */}
           <Box
             component="img"
-            src="/be-logo.png" // Replace with your logo path
+            src="https://picsum.photos/150" // Replace with your logo path
             alt="Bocado Exquisito"
             sx={{
               height: isMobile ? 40 : 60, // Adjust height based on screen size

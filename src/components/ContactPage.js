@@ -1,4 +1,3 @@
-// src/components/ContactPage.js
 import React, { useState } from 'react';
 import { Container, Typography, TextField, Button, Box } from '@mui/material';
 
@@ -6,7 +5,9 @@ function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    phoneNumber: '',
+    whatsappNumber: ''
   });
 
   const handleChange = (e) => {
@@ -18,8 +19,32 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle contact form submission
-    console.log('Contact form data:', formData);
+    // Replace YOUR_FORM_ID with your actual Formspree form ID
+    fetch('https://formspree.io/f/xeojvkdj', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          phoneNumber: '',
+          whatsappNumber: ''
+        });
+      } else {
+        alert('There was an error sending your message.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error sending your message.');
+    });
   };
 
   return (
@@ -42,6 +67,16 @@ function ContactPage() {
           name="email"
           type="email"
           value={formData.email}
+          onChange={handleChange}
+          fullWidth
+          required
+          margin="normal"
+        />
+        <TextField
+          label="Whatsapp or cellphone number"
+          name="phoneNumber"
+          type="tel"
+          value={formData.phoneNumber}
           onChange={handleChange}
           fullWidth
           required
