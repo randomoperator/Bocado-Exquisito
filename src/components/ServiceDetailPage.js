@@ -1,9 +1,10 @@
-// src/components/ServicesPage.js
+// src/components/ServiceDetailPage.js
 import React from 'react';
-import { Container, Typography, Grid } from '@mui/material';
-import ServiceCard from './ServiceCard';
+import { useParams } from 'react-router-dom';
+import { Container, Typography, Card, CardMedia, CardContent } from '@mui/material';
 
-function ServicesPage() {
+function ServiceDetailPage() {
+  const { serviceTitle } = useParams();
   const services = [
     {
       title: "Wedding Catering",
@@ -37,23 +38,34 @@ function ServicesPage() {
     }
   ];
 
+  const service = services.find(s => s.title.replace(/\s+/g, '-').toLowerCase() === serviceTitle);
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
-        Our Services
-      </Typography>
-      <Typography variant="body1" paragraph style={{ textAlign: 'center' }}>
-        We provide a range of catering services including weddings, corporate events, and private parties.
-      </Typography>
-      <Grid container spacing={4} justifyContent="center">
-        {services.map((service, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <ServiceCard service={service} />
-          </Grid>
-        ))}
-      </Grid>
+      {service ? (
+        <Card>
+          <CardMedia
+            component="img"
+            height="400"
+            image={service.image}
+            alt={service.title}
+          />
+          <CardContent>
+            <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
+              {service.title}
+            </Typography>
+            <Typography variant="body1">
+              {service.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      ) : (
+        <Typography variant="h6" color="text.secondary">
+          Service not found
+        </Typography>
+      )}
     </Container>
   );
 }
 
-export default ServicesPage;
+export default ServiceDetailPage;

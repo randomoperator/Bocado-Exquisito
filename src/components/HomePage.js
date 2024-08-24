@@ -6,14 +6,14 @@ function HomePage() {
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       {/* Hero Section */}
       <Box sx={{ textAlign: 'center', mb: 6 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom style={{ textAlign: 'center' }}>
           Welcome to Bocado Exquisito
         </Typography>
-        <Typography variant="h5" color="text.secondary" paragraph>
+        <Typography variant="h5" color="text.secondary" paragraph style={{ textAlign: 'center' }}>
           We bring exceptional catering services for every occasion, creating unforgettable culinary experiences.
         </Typography>
         <img
-          src="https://picsum.photos/450"
+          src="https://picsum.photos/600/200"
           alt="Catering Service"
           style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
         />
@@ -26,7 +26,7 @@ function HomePage() {
 
       {/* Highlights Section */}
       <Box sx={{ mb: 6 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
           Why Choose Us?
         </Typography>
         <Grid container spacing={4}>
@@ -89,7 +89,7 @@ function HomePage() {
 
       {/* Testimonials Section */}
       <Box sx={{ mb: 6 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
           What Our Clients Say
         </Typography>
         <Grid container spacing={4}>
