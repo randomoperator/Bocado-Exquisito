@@ -1,31 +1,70 @@
 // src/components/ContactPage.js
 import React, { useState } from 'react';
-import './ContactPage.css'; // Import CSS if needed
+import { Container, Typography, TextField, Button, Box } from '@mui/material';
 
 function ContactPage() {
-  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const handleChange = (e) => {
-    setMessage(e.target.value);
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle contact form submission
-    console.log('Contact message:', message);
+    console.log('Contact form data:', formData);
   };
 
   return (
-    <div>
-      <h2>Contact Us</h2>
+    <Container maxWidth="sm" sx={{ mt: 4 }}>
+      <Typography variant="h4" gutterBottom>
+        Contact Us
+      </Typography>
       <form onSubmit={handleSubmit}>
-        <label>
-          Your Message:
-          <textarea value={message} onChange={handleChange} required></textarea>
-        </label>
-        <button type="submit">Send Message</button>
+        <TextField
+          label="Your Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          fullWidth
+          required
+          margin="normal"
+        />
+        <TextField
+          label="Your Email"
+          name="email"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          fullWidth
+          required
+          margin="normal"
+        />
+        <TextField
+          label="Your Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          fullWidth
+          required
+          margin="normal"
+          multiline
+          rows={4}
+        />
+        <Box sx={{ textAlign: 'center', mt: 3 }}>
+          <Button variant="contained" color="primary" type="submit">
+            Send Message
+          </Button>
+        </Box>
       </form>
-    </div>
+    </Container>
   );
 }
 

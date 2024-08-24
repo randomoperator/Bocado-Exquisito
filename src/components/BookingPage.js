@@ -1,6 +1,6 @@
 // src/components/BookingPage.js
 import React, { useState } from 'react';
-import './BookingPage.css'; // Import CSS if needed
+import { TextField, Button, Grid, Container, Typography, Box } from '@mui/material';
 
 function BookingPage() {
   const [formData, setFormData] = useState({
@@ -25,32 +25,76 @@ function BookingPage() {
   };
 
   return (
-    <div>
-      <h2>Book a Service</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </label>
-        <label>
-          Date:
-          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-        </label>
-        <label>
-          Number of Guests:
-          <input type="number" name="guests" value={formData.guests} onChange={handleChange} required />
-        </label>
-        <label>
-          Event Type:
-          <input type="text" name="eventType" value={formData.eventType} onChange={handleChange} required />
-        </label>
-        <button type="submit">Submit Booking</button>
-      </form>
-    </div>
+    <Container maxWidth="sm">
+      <Box sx={{ mt: 1, mb: 1 }}>
+        <Typography variant="h4" gutterBottom>
+          Book a Service
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Date"
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                required
+                InputLabelProps={{ shrink: true }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Number of Guests"
+                type="number"
+                name="guests"
+                value={formData.guests}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Event Type"
+                name="eventType"
+                value={formData.eventType}
+                onChange={handleChange}
+                required
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button type="submit" variant="contained" color="primary" fullWidth>
+                Submit Booking
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+      </Box>
+    </Container>
   );
 }
 
