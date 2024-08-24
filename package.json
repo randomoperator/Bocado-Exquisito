@@ -1,6 +1,7 @@
 {
   "name": "bocado-exquisito",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Cristian David (random0perator)",
   "private": true,
   "homepage": "https://randomoperator.github.io/Bocado-Exquisito/",
   "dependencies": {

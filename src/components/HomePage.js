@@ -18,7 +18,7 @@ function HomePage() {
           style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
         />
         <Box sx={{ mt: 4 }}>
-          <Button variant="contained" color="primary" size="large" href="/services">
+          <Button variant="contained" color="primary" size="large" href="/Bocado-Exquisito/services">
             Explore Our Services
           </Button>
         </Box>
