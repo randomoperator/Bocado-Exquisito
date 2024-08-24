@@ -8,13 +8,12 @@ on:
 
 jobs:
   deploy:
+
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    env:
-      GIT_USER_NAME: ${{ vars.GIT_USER_NAME }}
-      GIT_USER_EMAIL: ${{ vars.GIT_USER_EMAIL }}
-
+    
     steps:
+      
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -31,8 +30,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.name "${{ env.GIT_USER_NAME }}"
-          git config --global user.email "${{ env.GIT_USER_EMAIL }}"
+          git config --global user.name "Github Actions""
+          git config --global user.email "actions@github.com"
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
