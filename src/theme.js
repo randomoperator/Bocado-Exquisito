@@ -51,10 +51,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
-          border: '2px solid #000000', // Black border
+          border: '1px solid #000000', // Black border
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            border: '3px solid #000000', // Black border on hover
+            border: '2px solid #000000', // Black border on hover
             boxShadow: '0px 8px 14px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
@@ -77,11 +77,11 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          border: '4px solid #000000', // Black border
-          borderRadius: '16px',
+          border: '2px solid #000000', // Black border
+          borderRadius: '8px',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            border: '5px solid #D4AF37',
+            border: '3px solid #D4AF37',
             boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
