@@ -14,7 +14,7 @@ function HomePage() {
           We bring exceptional catering services for every occasion, creating unforgettable culinary experiences.
         </Typography>
         <img
-          src="https://deborahmillercatering.com/wp-content/uploads/2021/10/cocktail-7-lemonade_deborah-miller-catering-1024x683.jpg.webp"
+          src="https://villadesales.com.co/wp-content/uploads/2024/03/Banner-service.jpg"
           alt="Catering Service"
           style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
         />
