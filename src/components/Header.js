@@ -19,7 +19,7 @@ function Header() {
             {/* Logo */}
             <Box
               component="img"
-              src="https://picsum.photos/150" // Replace with your logo path
+              src="https://i.ibb.co/kHxW4Rf/bocado-exquisito-logo.png" // Replace with your logo path
               alt="Bocado Exquisito"
               sx={{
                 height: isMobile ? 40 : 60, // Adjust height based on screen size
@@ -27,8 +27,8 @@ function Header() {
               }}
             />
             {/* Brand Name (optional) */}
-            <Typography variant={isMobile ? 'h6' : 'h5'}>
-              Bocado Exquisito
+            <Typography  sx={{ fontStyle: 'italic' }} variant={isMobile ? 'h6' : 'h5'}>
+              
             </Typography>
           </Box>
           {isMobile ? (

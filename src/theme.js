@@ -3,25 +3,25 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#003366', // Deep Blue
+      main: '#000000', // Black
     },
     secondary: {
-      main: '#0033A0', // Royal Blue
+      main: '#D4AF37', // Royal Blue
     },
     background: {
       default: '#F5F5F5', // Light Grey
       paper: '#FFFFFF', // White
     },
     text: {
-      primary: '#333333', // Charcoal Grey
-      secondary: '#C0C0C0', // Silver
+      primary: '#D4AF37', // Charcoal Grey
+      secondary: '#000000', // Silver
     },
   },
   typography: {
     fontFamily: '"Roboto", sans-serif', // Specify your font here
     h1: {
       fontWeight: 700,
-      color: '#003366', // Deep Blue
+      color: '#000000', // Deep Blue
       textAlign: 'center',
       fontSize: '2.5rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
@@ -30,7 +30,7 @@ const theme = createTheme({
     },
     h2: {
       fontWeight: 700,
-      color: '#003366', // Deep Blue
+      color: '#D4AF37', // Deep Blue
       textAlign: 'center',
       fontSize: '2rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
@@ -38,7 +38,7 @@ const theme = createTheme({
       },
     },
     body1: {
-      color: '#333333', // Charcoal Grey
+      color: '#000000', // Charcoal Grey
       textAlign: 'center',
       fontSize: '1rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
@@ -54,22 +54,22 @@ const theme = createTheme({
           border: '2px solid #000000', // Black border
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            border: '2px solid #000000', // Black border on hover
-            boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+            border: '3px solid #000000', // Black border on hover
+            boxShadow: '0px 8px 14px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
         containedPrimary: {
-          backgroundColor: '#003366', // Deep Blue
+          backgroundColor: '#000000', // Deep Blue
           color: '#FFFFFF', // White
           '&:hover': {
-            backgroundColor: '#002244', // Darker Blue
+            backgroundColor: '#D4AF37', // Darker Blue
           },
         },
         containedSecondary: {
-          backgroundColor: '#0033A0', // Royal Blue
+          backgroundColor: '#000000', // Royal Blue
           color: '#FFFFFF', // White
           '&:hover': {
-            backgroundColor: '#002080', // Darker Royal Blue
+            backgroundColor: '#D4AF37', // Darker Royal Blue
           },
         },
       },
@@ -77,10 +77,12 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          border: '2px solid #000000', // Black border
+          border: '4px solid #000000', // Black border
+          borderRadius: '16px',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            boxShadow: '0px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+            border: '5px solid #D4AF37',
+            boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
       },

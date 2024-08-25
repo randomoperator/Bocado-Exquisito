@@ -11,7 +11,7 @@ import ContactPage from './components/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MenuItemDetailPage from './components/MenuItemDetailPage';
-import './App.css';
+import FloatingContactButton from './components/FloatingContactButton'; 
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
             </Routes>
           </Box>
           <Footer />
+          <FloatingContactButton />
         </Box>
       </Router>
     </ThemeProvider>
