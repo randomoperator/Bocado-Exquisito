@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import theme from './theme';
@@ -12,8 +12,19 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MenuItemDetailPage from './components/MenuItemDetailPage';
 import FloatingContactButton from './components/FloatingContactButton'; 
+import PromoPopup from './components/PromoPopup'; 
 
 function App() {
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPopupOpen(true);
+    }, 15000); // Show popup after 15 seconds
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -33,6 +44,7 @@ function App() {
           </Box>
           <Footer />
           <FloatingContactButton />
+          <PromoPopup open={popupOpen} onClose={() => setPopupOpen(false)} /> {/* Add the popup here */}
         </Box>
       </Router>
     </ThemeProvider>

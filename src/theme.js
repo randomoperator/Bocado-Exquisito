@@ -9,7 +9,7 @@ const theme = createTheme({
       main: '#D4AF37', // Royal Blue
     },
     background: {
-      default: '#F5F5F5', // Light Grey
+      default: '#F9F5F0', // Light Grey
       paper: '#FFFFFF', // White
     },
     text: {
