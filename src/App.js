@@ -47,6 +47,10 @@ function App() {
           <PromoPopup open={popupOpen} onClose={() => setPopupOpen(false)} /> {/* Add the popup here */}
         </Box>
       </Router>
+      <audio autoPlay loop>
+        <source src={`${process.env.PUBLIC_URL}/chopin-nocturne.mp3`} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </ThemeProvider>
   );
 }

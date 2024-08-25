@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Dialog, DialogTitle, DialogContent, Button, IconButton, Typography, Box, Container } from '@mui/material';
+import React from 'react';
+import { Dialog, DialogTitle, DialogContent, IconButton, Typography, Box, Container } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import BookingPage from './BookingPage'; // Import the BookingPage component
 

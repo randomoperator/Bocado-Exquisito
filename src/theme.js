@@ -50,7 +50,7 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 4,
           border: '1px solid #000000', // Black border
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
@@ -78,11 +78,11 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           border: '2px solid #000000', // Black border
-          borderRadius: '8px',
+          borderRadius: '4px',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            border: '3px solid #D4AF37',
-            boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
+            border: '2px solid #D4AF37',
+            boxShadow: '10px 12px 16px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
       },
