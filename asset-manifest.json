@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Bocado-Exquisito/static/css/main.e14f270f.css",
+    "main.js": "/Bocado-Exquisito/static/js/main.0a9a6833.js",
+    "static/js/453.6e9413ba.chunk.js": "/Bocado-Exquisito/static/js/453.6e9413ba.chunk.js",
+    "index.html": "/Bocado-Exquisito/index.html",
+    "main.e14f270f.css.map": "/Bocado-Exquisito/static/css/main.e14f270f.css.map",
+    "main.0a9a6833.js.map": "/Bocado-Exquisito/static/js/main.0a9a6833.js.map",
+    "453.6e9413ba.chunk.js.map": "/Bocado-Exquisito/static/js/453.6e9413ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e14f270f.css",
+    "static/js/main.0a9a6833.js"
+  ]
+}
