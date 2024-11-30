@@ -2,27 +2,25 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { TextField, Button, Grid, Container, Typography, Box, MenuItem, Select, FormControl, InputLabel, FormControlLabel, Checkbox } from '@mui/material';
 
 function BookingPageNav2024() {
-  // Usar useMemo para calcular las fechas solo cuando cambian
   const promoEndDate = useMemo(() => new Date('2024-12-10T23:59:59'), []);
   const noBookingDate = useMemo(() => new Date('2024-12-20T23:59:59'), []);
-  const currentDate = useMemo(() => new Date(), []); // currentDate no cambiará a menos que sea necesario
+  const currentDate = useMemo(() => new Date(), []);
 
   const [formData, setFormData] = useState({
     nombre: '',
     correo: '',
-    fecha: '2024-12-24', // Fecha fija para la cena del 24 de diciembre
+    fecha: '2024-12-24',
     unidades: 1,
     tipoCena: '',
     deseaReservar: false,
-    alergias: 'No',
+    alergias: 'No', // Cambiado para ser un valor de "Sí" o "No"
     direccion: '',
     whatsapp: '',
-    costoReserva: 300000, // Costo de la reserva por una unidad
+    costoReserva: 300000,
   });
 
   const [timeRemaining, setTimeRemaining] = useState(null);
 
-  // Actualiza la cuenta regresiva cada segundo
   useEffect(() => {
     if (currentDate < promoEndDate) {
       const interval = setInterval(() => {
@@ -50,7 +48,7 @@ function BookingPageNav2024() {
       return {
         ...prevFormData,
         [e.target.name]: value,
-        costoReserva: currentDate < promoEndDate ? newCost * 0.9 : newCost, // Aplica el descuento si es antes del 10 de diciembre
+        costoReserva: currentDate < promoEndDate ? newCost * 0.9 : newCost,
       };
     });
   };
@@ -64,7 +62,7 @@ function BookingPageNav2024() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.alergias !== 'No') {
+    if (formData.alergias === 'Sí') {
       alert('No podemos proceder debido a las alergias registradas. Por favor, revise la lista de ingredientes.');
       return;
     }
@@ -73,16 +71,13 @@ function BookingPageNav2024() {
       return;
     }
 
-    // Verificamos si la fecha actual es posterior al 20 de diciembre para evitar el envío
     if (currentDate > noBookingDate) {
       alert('La fecha para hacer reservas ha pasado, no se pueden realizar más reservas.');
       return;
     }
 
-    // Si es antes del 10 de diciembre, aplicamos el descuento
     const finalCost = currentDate < promoEndDate ? formData.costoReserva * 0.9 : formData.costoReserva;
 
-    // Aquí deberías poner la URL del formulario de envío
     fetch('https://formspree.io/f/xqazwbnj', {
       method: 'POST',
       headers: {
@@ -90,7 +85,7 @@ function BookingPageNav2024() {
       },
       body: JSON.stringify({
         ...formData,
-        costoReserva: finalCost, // Enviamos el costo actualizado con descuento, si aplica
+        costoReserva: finalCost,
       })
     })
     .then(response => {
@@ -183,7 +178,7 @@ function BookingPageNav2024() {
                 onChange={handleChange}
                 required
                 InputLabelProps={{ shrink: true }}
-                disabled // La fecha está fija
+                disabled
               />
             </Grid>
             <Grid item xs={12}>
@@ -227,15 +222,24 @@ function BookingPageNav2024() {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox checked={formData.deseaReservar} onChange={handleCheckboxChange} name="deseaReservar" />}
-                label="Confirmo que quiero realizar la reserva"
-              />
+              <FormControl fullWidth required>
+                <InputLabel id="alergias-label">¿Tiene Alergias?</InputLabel>
+                <Select
+                  labelId="alergias-label"
+                  name="alergias"
+                  value={formData.alergias}
+                  onChange={handleChange}
+                  label="¿Tiene Alergias?"
+                >
+                  <MenuItem value="No">No</MenuItem>
+                  <MenuItem value="Sí">Sí</MenuItem>
+                </Select>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox checked={formData.alergias === 'Sí'} onChange={handleCheckboxChange} name="alergias" />}
-                label="Tengo alergias (especifique)"
+                control={<Checkbox checked={formData.deseaReservar} onChange={handleCheckboxChange} name="deseaReservar" />}
+                label="Confirmo que quiero realizar la reserva"
               />
             </Grid>
             <Grid item xs={12}>
