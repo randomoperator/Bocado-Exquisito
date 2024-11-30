@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { TextField, Button, Grid, Container, Typography, Box, MenuItem, Select, FormControl, InputLabel, FormControlLabel, Checkbox } from '@mui/material';
 
 function BookingPageNav2024() {
+  // Usar useMemo para calcular las fechas solo cuando cambian
+  const promoEndDate = useMemo(() => new Date('2024-12-10T23:59:59'), []);
+  const noBookingDate = useMemo(() => new Date('2024-12-20T23:59:59'), []);
+  const currentDate = useMemo(() => new Date(), []); // currentDate no cambiará a menos que sea necesario
+
   const [formData, setFormData] = useState({
     nombre: '',
     correo: '',
@@ -16,11 +21,6 @@ function BookingPageNav2024() {
   });
 
   const [timeRemaining, setTimeRemaining] = useState(null);
-  // eslint-disable-next-line
-  const promoEndDate = new Date('2024-12-10T23:59:59'); // Fecha límite para la promoción del 10% de descuento
-  // eslint-disable-next-line
-  const noBookingDate = new Date('2024-12-20T23:59:59'); // Fecha límite para hacer reservas (después de esta fecha, no se permite reservar)
-  const currentDate = new Date();
 
   // Actualiza la cuenta regresiva cada segundo
   useEffect(() => {
@@ -41,7 +41,7 @@ function BookingPageNav2024() {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, [currentDate, promoEndDate]); // Agregar las dependencias
+  }, [currentDate, promoEndDate]);
 
   const handleChange = (e) => {
     const value = e.target.name === "unidades" ? parseInt(e.target.value) : e.target.value;
@@ -220,64 +220,26 @@ function BookingPageNav2024() {
                   onChange={handleChange}
                   label="Número de Unidades"
                 >
-                  {[1, 2, 3, 4, 5].map(num => (
-                    <MenuItem key={num} value={num}>
-                      {num}
-                    </MenuItem>
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <MenuItem key={value} value={value}>{value}</MenuItem>
                   ))}
                 </Select>
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <FormControl fullWidth required>
-                <InputLabel id="alergias-label">¿Es alérgico a nueces o alguno de los ingredientes?</InputLabel>
-                <Select
-                  labelId="alergias-label"
-                  name="alergias"
-                  value={formData.alergias}
-                  onChange={handleChange}
-                  label="Alergias"
-                >
-                  <MenuItem value="No">No</MenuItem>
-                  <MenuItem value="Sí">Sí</MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Número de WhatsApp"
-                name="whatsapp"
-                value={formData.whatsapp}
-                onChange={handleChange}
-                required
-              />
-            </Grid>
-            <Grid item xs={12}>
               <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={formData.deseaReservar}
-                    onChange={handleCheckboxChange}
-                    name="deseaReservar"
-                  />
-                }
+                control={<Checkbox checked={formData.deseaReservar} onChange={handleCheckboxChange} name="deseaReservar" />}
                 label="Confirmo que quiero realizar la reserva"
               />
             </Grid>
             <Grid item xs={12}>
-              <Typography variant="h6" align="center">
-                Total a pagar: ${formData.costoReserva.toLocaleString()} COP
-              </Typography>
+              <FormControlLabel
+                control={<Checkbox checked={formData.alergias === 'Sí'} onChange={handleCheckboxChange} name="alergias" />}
+                label="Tengo alergias (especifique)"
+              />
             </Grid>
             <Grid item xs={12}>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                disabled={currentDate > noBookingDate} // Deshabilita el botón después del 20 de diciembre
-              >
+              <Button type="submit" variant="contained" color="primary" fullWidth>
                 Confirmar Reserva
               </Button>
             </Grid>
