@@ -3,25 +3,25 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#000000', // Black
+      main: '#D4AF37', // Gold
     },
     secondary: {
-      main: '#D4AF37', // Royal Blue
+      main: '#D4AF37', // Gold
     },
     background: {
-      default: '#F9F5F0', // Light Grey
+      default: '#F9F5F0', // Off-White
       paper: '#FFFFFF', // White
     },
     text: {
-      primary: '#D4AF37', // Charcoal Grey
-      secondary: '#000000', // Silver
+      primary: '#333333', // Dark Gray (for general text)
+      secondary: '#333333', // Dark Gray (for secondary text)
     },
   },
   typography: {
     fontFamily: '"Roboto", sans-serif', // Specify your font here
     h1: {
       fontWeight: 700,
-      color: '#000000', // Deep Blue
+      color: '#D4AF37', // Gold
       textAlign: 'center',
       fontSize: '2.5rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
@@ -30,20 +30,34 @@ const theme = createTheme({
     },
     h2: {
       fontWeight: 700,
-      color: '#D4AF37', // Deep Blue
+      color: '#D4AF37', // Gold
       textAlign: 'center',
       fontSize: '2rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
         fontSize: '1.5rem', // Smaller size on small screens
       },
     },
+    h3: {
+      fontWeight: 700,
+      color: '#D4AF37', // Gold
+      fontSize: '1.75rem', // Adjust for responsiveness
+    },
+    h4: {
+      fontWeight: 700,
+      color: '#D4AF37', // Gold
+      fontSize: '1.5rem',
+    },
     body1: {
-      color: '#000000', // Charcoal Grey
+      color: '#333333', // Dark Gray
       textAlign: 'center',
       fontSize: '1rem', // Adjust for responsiveness
       '@media (max-width:600px)': {
         fontSize: '0.875rem', // Smaller size on small screens
       },
+    },
+    body2: {
+      color: '#333333', // Dark Gray
+      fontSize: '0.875rem',
     },
   },
   components: {
@@ -59,17 +73,17 @@ const theme = createTheme({
           },
         },
         containedPrimary: {
-          backgroundColor: '#000000', // Deep Blue
+          backgroundColor: '#000000', // Black
           color: '#FFFFFF', // White
           '&:hover': {
-            backgroundColor: '#D4AF37', // Darker Blue
+            backgroundColor: '#D4AF37', // Gold
           },
         },
         containedSecondary: {
-          backgroundColor: '#000000', // Royal Blue
+          backgroundColor: '#000000', // Black
           color: '#FFFFFF', // White
           '&:hover': {
-            backgroundColor: '#D4AF37', // Darker Royal Blue
+            backgroundColor: '#D4AF37', // Gold
           },
         },
       },
@@ -81,7 +95,7 @@ const theme = createTheme({
           borderRadius: '4px',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Depth effect
           '&:hover': {
-            border: '2px solid #D4AF37',
+            border: '2px solid #D4AF37', // Gold
             boxShadow: '10px 12px 16px rgba(0, 0, 0, 0.3)', // Deeper depth effect on hover
           },
         },
