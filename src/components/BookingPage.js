@@ -16,7 +16,7 @@ function BookingPageNav2024() {
     alergias: 'No', // Cambiado para ser un valor de "Sí" o "No"
     direccion: '',
     whatsapp: '',
-    costoReserva: 300000,
+    costoReserva: 3250000,
   });
 
   const [timeRemaining, setTimeRemaining] = useState(null);
@@ -44,7 +44,7 @@ function BookingPageNav2024() {
   const handleChange = (e) => {
     const value = e.target.name === "unidades" ? parseInt(e.target.value) : e.target.value;
     setFormData((prevFormData) => {
-      const newCost = e.target.name === "unidades" ? value * 300000 : prevFormData.costoReserva;
+      const newCost = e.target.name === "unidades" ? value * 350000 : prevFormData.costoReserva;
       return {
         ...prevFormData,
         [e.target.name]: value,
@@ -70,48 +70,51 @@ function BookingPageNav2024() {
       alert('Debe confirmar su deseo de reservar para poder proceder.');
       return;
     }
-
+  
     if (currentDate > noBookingDate) {
       alert('La fecha para hacer reservas ha pasado, no se pueden realizar más reservas.');
       return;
     }
-
+  
     const finalCost = currentDate < promoEndDate ? formData.costoReserva * 0.9 : formData.costoReserva;
-
+  
     fetch('https://formspree.io/f/xqazwbnj', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         ...formData,
         costoReserva: finalCost,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert('¡Reserva realizada con éxito!');
+          setFormData({
+            nombre: '',
+            correo: '',
+            fecha: '2024-12-24',
+            unidades: 1,
+            tipoCena: '',
+            deseaReservar: false,
+            alergias: 'No',
+            direccion: '',
+            whatsapp: '',
+            costoReserva: 350000,
+          });
+          // Redirigir a WhatsApp
+          window.location.href = 'https://wa.me/+573245365007?text=Hola Bocado-Exquisito, acabo de realizar una reserva y quisiera confirmarla';
+        } else {
+          alert('Hubo un error al realizar la reserva.');
+        }
       })
-    })
-    .then(response => {
-      if (response.ok) {
-        alert('¡Reserva realizada con éxito!');
-        setFormData({
-          nombre: '',
-          correo: '',
-          fecha: '2024-12-24',
-          unidades: 1,
-          tipoCena: '',
-          deseaReservar: false,
-          alergias: 'No',
-          direccion: '',
-          whatsapp: '',
-          costoReserva: 300000,
-        });
-      } else {
+      .catch((error) => {
+        console.error('Error:', error);
         alert('Hubo un error al realizar la reserva.');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('Hubo un error al realizar la reserva.');
-    });
+      });
   };
+  
 
   return (
     <Container maxWidth="sm">
@@ -120,8 +123,7 @@ function BookingPageNav2024() {
           Reserva para la Cena de Navidad 2024
         </Typography>
         <Typography variant="body1" align="center" paragraph>
-          El costo de la reserva es de $300,000 por unidad, con el saldo de $300,000 a pagar el día del evento. 
-          Recuerde que para confirmar la reserva, debe realizar el pago del 50% y enviarnos la captura de pantalla del pago al WhatsApp 3245365007.
+          El costo de la cena es de $650.000 por unidad (Suficiente para 8 - 10 personas), para realizar la reserva, debe realizar un adelanto del 50% del valor total de la orden al nequi 3245936835 o a la cta de ahorros bancolombia 78841049852 y enviar soporte de la transferencia al whatsapp 3245365007, el 50% restante debe ser cancelado el dia de la entrega del pedido.  
         </Typography>
         <Typography variant="body2" align="center" paragraph>
           Nuestro menú alcanza para de 8 a 10 personas. Si su grupo es mayor a eso, le recomendamos adquirir más de una unidad.
