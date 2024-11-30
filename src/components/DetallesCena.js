@@ -9,7 +9,10 @@ function DetallesCena() {
           🥂 Información Importante sobre la Cena Navideña 2024 🍴
         </Typography>
         <Typography variant="h6" color="text.secondary" paragraph>
-          Nuestra cena navideña se entrega cuidadosamente en moldes de aluminio, listos para disfrutar en la comodidad de tu hogar. Los ingredientes son frescos y seleccionados para ofrecerte una experiencia culinaria única.
+          Nuestra cena navideña se entrega cuidadosamente empacada en moldes de aluminio, listos para disfrutar en la comodidad de tu hogar. Los ingredientes son frescos y seleccionados para ofrecerte una experiencia culinaria única.
+        </Typography>
+        <Typography variant="h6" color="text.secondary" paragraph>
+          Cada unidad de cena navideña tiene un costo de $650.000 pesos y esta compuesta por lo siguiente:
         </Typography>
 
         <Grid container spacing={4}>
@@ -56,7 +59,7 @@ function DetallesCena() {
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
           Para confirmar la separación de tu cena navideña, es necesario realizar un abono del 50% del valor total de la reserva por adelantado, esto para garantizar el cupo ya que son limitados. El 50% restante se deberá abonar el día de la entrega.
-          Cada unidad tiene un precio de $600.000, puedes ordenar tantas unidades como desees, siempre y cuando haya disponibilidad en el sitio.
+          Cada unidad de menu cena navideña 2024 (suficiente para entre 8 y 10 personas) tiene un precio de $650.000, puedes ordenar tantas unidades como desees, siempre y cuando haya disponibilidad en el sitio.
         </Typography>
 
         <Typography variant="h6" color="text.secondary" paragraph sx={{ mt: 4 }}>

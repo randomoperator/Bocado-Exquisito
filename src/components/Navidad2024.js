@@ -149,7 +149,7 @@ function Navidad2024() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://picsum.photos/450"
+                image="https://www.coren.es/wp-content/uploads/2017/05/iStock-5325500961.jpg"
                 alt="Ingredientes de calidad"
               />
               <CardContent>
@@ -167,7 +167,7 @@ function Navidad2024() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://picsum.photos/450"
+                image="https://www.fda.gov/files/buffet3.jpg"
                 alt="Menús Personalizados"
               />
               <CardContent>
@@ -185,7 +185,7 @@ function Navidad2024() {
               <CardMedia
                 component="img"
                 height="140"
-                image="https://picsum.photos/450"
+                image="https://static.vecteezy.com/system/resources/thumbnails/002/721/925/small/premium-quality-gold-medal-badge-label-seal-isolated-on-white-background-illustration-eps10-free-vector.jpg"
                 alt="Servicio Profesional"
               />
               <CardContent>
