@@ -16,7 +16,9 @@ function BookingPageNav2024() {
   });
 
   const [timeRemaining, setTimeRemaining] = useState(null);
+  // eslint-disable-next-line
   const promoEndDate = new Date('2024-12-10T23:59:59'); // Fecha límite para la promoción del 10% de descuento
+  // eslint-disable-next-line
   const noBookingDate = new Date('2024-12-20T23:59:59'); // Fecha límite para hacer reservas (después de esta fecha, no se permite reservar)
   const currentDate = new Date();
 
@@ -39,7 +41,7 @@ function BookingPageNav2024() {
       }, 1000);
       return () => clearInterval(interval);
     }
-  }, []);
+  }, [currentDate, promoEndDate]); // Agregar las dependencias
 
   const handleChange = (e) => {
     const value = e.target.name === "unidades" ? parseInt(e.target.value) : e.target.value;
