@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - poc  # or the name of your main branch
+      - landing_navidad
   workflow_dispatch:
 
 jobs:
