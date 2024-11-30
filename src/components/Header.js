@@ -60,6 +60,9 @@ function Header() {
                   <ListItem button component={Link} to="/booking" onClick={handleDrawerToggle}>
                     <ListItemText primary="Booking" />
                   </ListItem>
+                  <ListItem button component={Link} to="/navidad2024" onClick={handleDrawerToggle}>
+                    <ListItemText primary="Navidad2024" />
+                  </ListItem>
                   <ListItem button component={Link} to="/contact" onClick={handleDrawerToggle}>
                     <ListItemText primary="Contact" />
                   </ListItem>
@@ -79,6 +82,9 @@ function Header() {
               </Box>
               <Box component={Link} to="/booking" sx={{ margin: theme.spacing(1), textDecoration: 'none', color: 'inherit' }}>
                 Booking
+              </Box>
+              <Box component={Link} to="/navidad2024" sx={{ margin: theme.spacing(1), textDecoration: 'none', color: 'inherit' }}>
+                Navidad2024
               </Box>
               <Box component={Link} to="/contact" sx={{ margin: theme.spacing(1), textDecoration: 'none', color: 'inherit' }}>
                 Contact

@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import MenuItemDetailPage from './components/MenuItemDetailPage';
 import FloatingContactButton from './components/FloatingContactButton'; 
 import PromoPopup from './components/PromoPopup'; 
+import Navidad2024 from './components/Navidad2024';
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -39,6 +40,7 @@ function App() {
               <Route path="/menu" element={<MenuPage />} />
               <Route path="/menu/:itemName" element={<MenuItemDetailPage />} />
               <Route path="/booking" element={<BookingPage />} />
+              <Route path="/navidad2024" element={<Navidad2024 />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </Box>

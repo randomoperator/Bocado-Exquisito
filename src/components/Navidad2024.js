@@ -1,0 +1,144 @@
+import React from 'react';
+import { Container, Typography, Grid, Box, Button, Card, CardContent, CardMedia } from '@mui/material';
+import { Link } from 'react-router-dom';
+
+function Navidad2024() {
+  return (
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      {/* Hero Section */}
+      <Box sx={{ textAlign: 'center', mb: 6 }}>
+        <Typography variant="h2" component="h1" gutterBottom>
+          Bienvenido a Bocado Exquisito!
+        </Typography>
+        <Typography variant="h5" color="text.secondary" paragraph>
+          En estas fechas especiales, aprovecha y consiente a los tuyos con una espectacular cena navideña, a cargo de la Chef Diana Torregroza.
+        </Typography>
+        <Typography variant="h6" color="text.secondary" paragraph>
+        Vive la experiencia de la alta cocina, en la comodidad de tu propio hogar!
+        </Typography>
+        <img
+          src="https://villadesales.com.co/wp-content/uploads/2024/03/Banner-service.jpg"
+          alt="Catering Service"
+          style={{ width: '100%', borderRadius: 8, marginTop: '20px' }}
+        />
+        <Box sx={{ mt: 4 }}>
+          <Link to="/services" style={{ textDecoration: 'none' }}>
+            <Button variant="contained" color="primary" size="large">
+              Explore Our Services
+            </Button>
+          </Link>
+        </Box>
+      </Box>
+
+      {/* Highlights Section */}
+      <Box sx={{ mb: 6 }}>
+        <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
+          Why Choose Us?
+        </Typography>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={4}>
+            <Card sx={{ textAlign: 'center' }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image="https://picsum.photos/450"
+                alt="Quality Ingredients"
+              />
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Quality Ingredients
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  We use only the freshest and finest ingredients to prepare our dishes, ensuring exceptional taste and quality.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Card sx={{ textAlign: 'center' }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image="https://picsum.photos/450"
+                alt="Customized Menus"
+              />
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Customized Menus
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Our catering services are tailored to fit your event's theme and your guests’ preferences, making every event unique.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Card sx={{ textAlign: 'center' }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image="https://picsum.photos/450"
+                alt="Professional Service"
+              />
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Professional Service
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Our experienced team ensures seamless execution from start to finish, leaving you free to enjoy your event.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Testimonials Section */}
+      <Box sx={{ mb: 6 }}>
+        <Typography variant="h4" gutterBottom style={{ textAlign: 'center' }}>
+          What Our Clients Say
+        </Typography>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6}>
+            <Card sx={{ textAlign: 'center' }}>
+              <CardContent>
+                <Typography variant="body1" paragraph>
+                  "Bocado Exquisito made our wedding truly special! The food was amazing, and the service was flawless."
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  – Maria and Carlos
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Card sx={{ textAlign: 'center' }}>
+              <CardContent>
+                <Typography variant="body1" paragraph>
+                  "The team catered our corporate event, and everyone was impressed with the quality and professionalism."
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  – Business Corp.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Call to Action */}
+      <Box sx={{ textAlign: 'center', mt: 6 }}>
+        <Typography variant="h5" gutterBottom>
+          Ready to Plan Your Next Event?
+        </Typography>
+        <Link to="/booking" style={{ textDecoration: 'none' }}>
+          <Button variant="contained" color="secondary" size="large">
+            Book a Service
+          </Button>
+        </Link>
+      </Box>
+    </Container>
+  );
+}
+
+export default Navidad2024;
